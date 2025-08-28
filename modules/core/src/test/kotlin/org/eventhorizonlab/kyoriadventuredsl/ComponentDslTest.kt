@@ -22,6 +22,7 @@ class ComponentDslTest :
                     color(NamedTextColor.AQUA)
                 }
 
+            c should beInstanceOf<TextComponent>()
             c.content() shouldBe "Hello World"
             c.color() shouldBe NamedTextColor.AQUA
         }
