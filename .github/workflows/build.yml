@@ -48,6 +48,5 @@ jobs:
           comment: 'true'
           updateComment: 'true'
           include_passed: 'true'
-          annotate_notice: 'true'
 
 
