@@ -9,9 +9,7 @@ configurations {
 def dep = [
         "adventure-api"             : "net.kyori:adventure-api:${versions.'adventure-api'}",
         "kotest"                    : "io.kotest:kotest-framework-engine:${versions.kotest}",
-        "kotest-assertions"         : "io.kotest:kotest-assertions-core:${versions.kotest}",
-        "kotest-extensions-junitxml": "io.kotest:kotest-extensions-junitxml:${versions.kotest}",
-        "kotest-runner-junit5"      : "io.kotest:kotest-runner-junit5:${versions.kotest}"
+        "kotest-assertions"         : "io.kotest:kotest-assertions-core:${versions.kotest}"
 ]
 
 dependencies {
@@ -19,6 +17,4 @@ dependencies {
 
     testImplementation dep.kotest
     testImplementation dep."kotest-assertions"
-    testImplementation dep."kotest-extensions-junitxml"
-    testImplementation dep."kotest-runner-junit5"
 }
