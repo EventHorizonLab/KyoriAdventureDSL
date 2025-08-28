@@ -1,6 +1,8 @@
 name: Build & Kotest
 on:
   push:
+    branches:
+      - master
   pull_request:
     types:
       - opened
@@ -23,7 +25,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlw build
+        run: ./gradlew build
 
       - name: Run Kotest tests
         run: ./gradlew kotest
