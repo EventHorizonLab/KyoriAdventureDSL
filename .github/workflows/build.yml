@@ -47,4 +47,5 @@ jobs:
           include_time_in_summary: 'true'
           comment: 'true'
           updateComment: 'true'
+          include_passed: 'true'
 
