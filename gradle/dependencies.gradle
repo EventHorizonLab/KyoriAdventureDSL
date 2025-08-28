@@ -9,7 +9,7 @@ configurations {
 def dep = [
         "adventure-api"    : "net.kyori:adventure-api:${versions.'adventure-api'}",
         "kotest"           : "io.kotest:kotest-framework-engine:${versions.kotest}",
-        "kotest-assertions": "io.kotest:kotest-assertions-core:${versions.kotest}",
+        "kotest-assertions": "io.kotest:kotest-assertions-core:${versions.kotest}"
 ]
 
 dependencies {

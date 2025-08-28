@@ -16,7 +16,7 @@ subprojects {
     apply plugin: 'org.jlleitschuh.gradle.ktlint'
 
     kotlin {
-        jvmToolchain(23)
+        jvmToolchain(24)
     }
 
     apply from: rootProject.file('gradle/repositories.gradle')

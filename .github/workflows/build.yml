@@ -10,13 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - name: Set up JDK 21
+      - name: Set up JDK
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
@@ -31,3 +34,17 @@ jobs:
 
       - name: Run Kotest tests
         run: ./gradlew kotest
+
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v5
+        with:
+          check_name: 'Kotest Test Report'
+          report_paths: '**/jvmKotest/TEST-*.xml'
+          fail_on_failure: 'true'
+          require_tests: 'true'
+          detailed_summary: 'true'
+          flaky_summary: 'true'
+          include_time_in_summary: 'true'
+          comment: 'true'
+          updateComment: 'true'
+
