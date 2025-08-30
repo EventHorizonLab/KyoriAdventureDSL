@@ -29,6 +29,10 @@ subprojects {
         destinationDirectory.set(rootProject.layout.buildDirectory.dir("libs"))
     }
 
+    tasks.named("check") {
+        dependsOn("spotlessCheck")
+    }
+
     apply from: rootProject.file('gradle/spotless.gradle')
 }
 
