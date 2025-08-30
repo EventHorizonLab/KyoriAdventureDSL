@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'org.eventhorizonlab.kyoriadventuredsl'
-version = '1.0-SNAPSHOT'
+version = '0.0.1-PRE-ALPHA'
 
 subprojects {
     apply plugin: 'org.jetbrains.kotlin.jvm'
@@ -16,11 +16,7 @@ subprojects {
     apply plugin: 'org.jlleitschuh.gradle.ktlint'
 
     kotlin {
-        jvmToolchain(23)
-    }
-
-    test {
-        useJUnitPlatform()
+        jvmToolchain(24)
     }
 
     apply from: rootProject.file('gradle/repositories.gradle')
@@ -31,6 +27,10 @@ subprojects {
         archiveBaseName.set("${rootProject.name}-${project.name}")
         archiveVersion.set(rootProject.version as String)
         destinationDirectory.set(rootProject.layout.buildDirectory.dir("libs"))
+    }
+
+    tasks.named("check") {
+        dependsOn("spotlessCheck")
     }
 
     apply from: rootProject.file('gradle/spotless.gradle')

@@ -5,7 +5,7 @@ spotless {
         target '*.gradle', '.gitattributes', '.gitignore'
 
         trimTrailingWhitespace()
-        indentWithSpaces(4)
+        leadingTabsToSpaces()
         endWithNewline()
     }
 
